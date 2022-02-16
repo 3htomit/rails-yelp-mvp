@@ -17,6 +17,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @restaurant = @review.restaurant
+    @review.delete
+    redirect_to restaurant_path(@restaurant)
   end
 
   private

@@ -31,10 +31,16 @@
 
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item">
-      <%= "⭐" * review.rating %><%= "◽" * (5 - review.rating)%>
-      <br>
-      <%= review.content%>
-    </li>
+    <div class="d-flex align-items-center">
+      <li class="list-group-item flex-grow-1">
+        <%= "⭐" * review.rating %><%= "◽" * (5 - review.rating)%>
+        <br>
+        <%= review.content%>
+      </li>
+      <%= link_to "❌", review_path(review),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "text-decoration-none" %>
+    </div>
   <% end %>
 </ul>
