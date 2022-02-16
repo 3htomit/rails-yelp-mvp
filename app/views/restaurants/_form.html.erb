@@ -1,0 +1,8 @@
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= link_to "Cancel", :back, class: "btn btn-outline-warning"%>
+<% end %>

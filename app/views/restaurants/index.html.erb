@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center">
+  <h2 class="flex-grow-1">Restaurants</h2>
+  <%= link_to "➕", new_restaurant_path, class: "text-decoration-none" %>
+</div>
+
+<br>
+
+<ul class="list-group ">
+  <% @restaurants.each do |restaurant| %>
+    <div class="d-flex align-items-center">
+      <li class="list-group-item flex-grow-1"><%= link_to restaurant.name, restaurant_path(restaurant) %> (<%= restaurant.category.capitalize %>)</li>
+      <%= link_to "❌", restaurant_path(restaurant),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "text-decoration-none" %>
+    </div>
+  <% end %>
+</ul>

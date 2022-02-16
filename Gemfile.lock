@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: cb606b81c9c8048a3b9b044a4619252d16b576ab
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +81,8 @@ GEM
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
     globalid (1.0.0)
@@ -211,6 +221,8 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.4.4)
   byebug
+  faker!
+  font-awesome-rails
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)

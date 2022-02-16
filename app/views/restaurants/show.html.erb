@@ -1,0 +1,40 @@
+<%# <%= link_to "Back home", restaurants_path, class: "btn btn-primary"%>
+
+<%# <hr> %>
+
+<div class="d-flex align-items-center">
+  <h2 class="flex-grow-1"><%= @restaurant.name %></h2>
+  <%= link_to "✏️", edit_restaurant_path(@restaurant), class: "text-decoration-none" %>
+</div>
+
+<%# <i class="fa-solid fa-star"></i> %>
+
+<p class="info"> <%= @restaurant.address %> <br> <%= @restaurant.category.capitalize %> </p>
+<p> <%= "Call us: #{@restaurant.phone_number}" if @restaurant.phone_number.present? %> </p>
+
+<br><br>
+<hr>
+
+<div class="d-flex align-items-center">
+  <h3 class="flex-grow-1">Reviews:</h3>
+  <%= link_to "➕", new_restaurant_review_path(@restaurant), class: "text-decoration-none" %>
+</div>
+
+<p>
+<% if @average.nil?%>
+  <%= "Be the first to review this restaurant" %>
+<% else %>
+  <%= "Average rating: " %><%= "⭐" * @average %><%= "◽" * (5 - @average)%></p>
+<% end %>
+
+<br>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <%= "⭐" * review.rating %><%= "◽" * (5 - review.rating)%>
+      <br>
+      <%= review.content%>
+    </li>
+  <% end %>
+</ul>
